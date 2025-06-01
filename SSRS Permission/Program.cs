@@ -9,10 +9,30 @@ namespace SSRS_Permission
         static void Main(string[] args)
         {
             // تنظیمات اتصال به سرور
-            var reportServiceUrl = "http://bi/ReportServer/ReportService2010.asmx";
-            var username = "hamid.doostparvar"; // نام کاربری برای احراز هویت
-            var password = "HD@202505?"; // رمز عبور برای احراز هویت
-            var domain = "ZARRINGC"; // دامنه (در صورت نیاز)
+            //var reportServiceUrl = "http://bi/ReportServer/ReportService2010.asmx";
+            //var username = "hamid.doostparvar"; // نام کاربری برای احراز هویت
+            //var password = "Pass"; // رمز عبور برای احراز هویت
+            //var domain = "DomainName"; // دامنه (در صورت نیاز)
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Insert the reportServiceUrl:"); //like "http://bi/ReportServer/ReportService2010.asmx";
+            Console.ForegroundColor = ConsoleColor.White;
+            var reportServiceUrl = Console.ReadLine();
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Insert username:");
+            Console.ForegroundColor = ConsoleColor.White;
+            var username = Console.ReadLine();
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Insert password:");
+            Console.ForegroundColor = ConsoleColor.White;
+            var password = Console.ReadLine();
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Insert domain:");
+            Console.ForegroundColor = ConsoleColor.White;
+            var domain = Console.ReadLine();
 
             // ایجاد یک نمونه از سرویس گزارش‌دهی
             var reportService = new ReportingService2010
@@ -25,7 +45,7 @@ namespace SSRS_Permission
             // لیست کاربرانی که می‌خواهید به آن‌ها دسترسی دهید
             var users = new List<string>();
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Insert the users with \",\" seperators:");
+            Console.WriteLine($"Insert the users with \",\" seperators:"); // like :DomainName\Zeynab.Takallou,DomainName\Maryam.Sheikh,DomainName\Alireza.Ghorbani,DomainName\nikki.changizi,DomainName\fatemeh.golshani
             Console.ForegroundColor = ConsoleColor.White;
 
             string input = Console.ReadLine(); // دریافت ورودی از کاربر
@@ -36,13 +56,13 @@ namespace SSRS_Permission
             }
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Specify the Path:");
+            Console.WriteLine("Specify the Path:"); // Like: /Development/Optime
             Console.ForegroundColor = ConsoleColor.White;
 
             var itemPath = Console.ReadLine();
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Specify the Role:");
+            Console.WriteLine("Specify the Role:"); // Like : Browser
             Console.ForegroundColor = ConsoleColor.White;
 
             var Role = Console.ReadLine();

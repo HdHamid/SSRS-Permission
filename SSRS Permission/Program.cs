@@ -11,6 +11,7 @@ namespace SSRS_Permission
             // تنظیمات اتصال به سرور
             //var reportServiceUrl = "http://bi/ReportServer/ReportService2010.asmx";
             //var username = "hamid.doostparvar"; // نام کاربری برای احراز هویت
+            
             //var password = "Pass"; // رمز عبور برای احراز هویت
             //var domain = "DomainName"; // دامنه (در صورت نیاز)
 
